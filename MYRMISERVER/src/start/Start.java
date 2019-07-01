@@ -22,10 +22,12 @@ public class Start {
     
     public static void main(String[] args) {
         try {
-            Registry reg = LocateRegistry.createRegistry(5050);
+            Registry reg = LocateRegistry.createRegistry(5051);
             reg.rebind("IJSE", (Remote) new ServiceImpl());
             System.out.println("Server is started"); //if server is started the console will given this message
         } catch (RemoteException ex) {
+            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
