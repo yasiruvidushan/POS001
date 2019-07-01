@@ -11,8 +11,9 @@ import java.rmi.Remote;
  *
  * @author yasiru vidushan
  */
-public interface observer extends Remote{
-    public void update(String message) throws Exception;
-    
+public interface subject extends Remote{
+    public void register(observer ob) throws Exception;
+    public void unregister(observer ob) throws Exception;
+    public void notifyAllObserver(observer ob) throws Exception;
     
 }
