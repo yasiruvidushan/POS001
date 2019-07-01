@@ -14,6 +14,6 @@ import java.rmi.Remote;
 public interface subject extends Remote{
     public void register(observer ob) throws Exception;
     public void unregister(observer ob) throws Exception;
-    public void notifyAllObserver(observer ob) throws Exception;
+    public void notifyAllObserver(String ob) throws Exception;
     
 }
